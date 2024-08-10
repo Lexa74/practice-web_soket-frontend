@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +43,76 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.chat {
+  border-radius: 20px;
+  border: 1px solid #757575;
+  padding: 20px;
+  min-width: 380px;
+  min-height: 500px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.message-container__message {
+  background: #5d5d5d;
+  color: white;
+  border-radius: 10px;
+  text-align: left;
+  padding: 0 10px;
+  max-width: max-content;
+  margin: auto 0 0 0;
+}
+
+.message-container__message::after {
+    content: "☑️";
+}
+
+.message-container__message.is-viewed::after {
+  content: "✅";
+}
+
+.message-container__message.self {
+  background: #535bf2;
+  color: white;
+  text-align: right;
+  margin: 0 0 0 auto;
+}
+
+input {
+  border-radius: 10px;
+  outline: none;
+  margin-top: 20px;
+  border: none;
+  background: rgb(102 102 102);
+  padding: 10px;
+}
+
+.send {
+  position: relative;
+}
+
+.send > div {
+  position: absolute;
+  right: 0;
+  background: black;
+  bottom: 1px;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.send input {
+  width: 100%;
 }
